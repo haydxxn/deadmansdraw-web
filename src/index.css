@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    margin: 0;
+    background-color: #0a0806;
+    color: #e8d890;
+    font-family: Georgia, 'Times New Roman', serif;
+    min-height: 100vh;
+  }
+  #root {
+    width: 100%;
+    text-align: left;
+    border: none;
+  }
+}
