@@ -1,20 +1,20 @@
 const CLS = {
-  turn:  'text-yellow-500 font-bold',
-  bust:  'text-red-400',
-  bank:  'text-green-400',
-  event: 'text-blue-300',
-  '':    'text-yellow-800',
+  turn:  'text-zinc-200 font-semibold',
+  bust:  'text-rose-400',
+  bank:  'text-emerald-400/90',
+  event: 'text-sky-400/90',
+  '':    'text-zinc-500',
 };
 
 export default function GameLog({ log }) {
   return (
     <div className="flex flex-col h-full overflow-hidden">
-      <h3 className="text-yellow-600 text-xs uppercase tracking-widest border-b border-yellow-900 pb-2 mb-2 shrink-0">
-        ☠ Game Log
+      <h3 className="text-zinc-500 text-xs uppercase tracking-wider border-b border-zinc-800 pb-2 mb-2 shrink-0 font-medium">
+        Log
       </h3>
       <div className="overflow-y-auto flex-1 space-y-0.5 pr-1">
         {log.map(entry => (
-          <p key={entry.id} className={`text-[11px] leading-5 border-b border-white/[0.03] ${CLS[entry.cls] ?? CLS['']}`}>
+          <p key={entry.id} className={`text-[12px] leading-snug border-b border-zinc-800/40 py-0.5 ${CLS[entry.cls] ?? CLS['']}`}>
             {entry.msg}
           </p>
         ))}

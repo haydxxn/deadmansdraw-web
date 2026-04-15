@@ -3,10 +3,11 @@
 @layer base {
   body {
     margin: 0;
-    background-color: #0a0806;
-    color: #e8d890;
-    font-family: Georgia, 'Times New Roman', serif;
+    background-color: #09090b;
+    color: #fafafa;
+    font-family: "DM Sans", system-ui, -apple-system, sans-serif;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
   }
   #root {
     width: 100%;

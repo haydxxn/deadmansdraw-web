@@ -9,32 +9,31 @@ export default function GameOverScreen({ players, myIdx = 0, onRestart }) {
   const oppName  = players[1 - myIdx].name;
 
   let result, resultColor;
-  if (myScore > oppScore)       { result = '⚓ You Win!';              resultColor = 'text-yellow-300'; }
-  else if (oppScore > myScore)  { result = `💀 ${oppName} Wins!`;     resultColor = 'text-red-400';    }
-  else                          { result = "⚖️ It's a Tie!";           resultColor = 'text-blue-300';   }
+  if (myScore > oppScore)       { result = 'You win';              resultColor = 'text-zinc-100'; }
+  else if (oppScore > myScore)  { result = `${oppName} wins`;     resultColor = 'text-zinc-300';    }
+  else                          { result = "It's a tie";           resultColor = 'text-zinc-400';   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm">
-      <div className="bg-stone-900 border-2 border-yellow-600 rounded-2xl p-10 text-center max-w-sm w-[90%]
-                      shadow-2xl shadow-yellow-900/50">
-        <h2 className="text-4xl font-bold text-yellow-400 mb-4">⚓ Game Over</h2>
-        <div className="space-y-2 mb-4 text-lg">
-          <p>
-            <span className="text-yellow-600">{myName} (You):</span>{' '}
-            <span className="text-yellow-200 font-bold text-2xl">{myScore}</span>
+    <div className="fixed inset-0 z-[50] flex items-center justify-center bg-black/75 backdrop-blur-sm p-4">
+      <div className="bg-zinc-900 border border-zinc-700 rounded-2xl p-10 text-center max-w-sm w-full shadow-xl">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-6 tracking-tight">Game over</h2>
+        <div className="space-y-3 mb-6 text-left text-sm">
+          <p className="flex justify-between gap-4">
+            <span className="text-zinc-500">{myName} (you)</span>
+            <span className="text-zinc-100 font-semibold tabular-nums text-lg">{myScore}</span>
           </p>
-          <p>
-            <span className="text-yellow-600">{oppName}:</span>{' '}
-            <span className="text-yellow-200 font-bold text-2xl">{oppScore}</span>
+          <p className="flex justify-between gap-4">
+            <span className="text-zinc-500">{oppName}</span>
+            <span className="text-zinc-100 font-semibold tabular-nums text-lg">{oppScore}</span>
           </p>
         </div>
-        <p className={`text-2xl font-bold mb-8 ${resultColor}`}>{result}</p>
+        <p className={`text-lg font-semibold mb-8 ${resultColor}`}>{result}</p>
         <button
           onClick={onRestart}
-          className="px-8 py-3 rounded-xl border-2 border-yellow-600 bg-yellow-950 text-yellow-300
-                     font-semibold hover:bg-yellow-900 hover:shadow-lg active:scale-95 transition-all duration-150"
+          className="w-full px-6 py-3 rounded-lg border border-zinc-600 bg-zinc-800 text-zinc-100
+                     font-semibold hover:bg-zinc-700 active:scale-[0.99] transition-all"
         >
-          Back to Menu
+          Back to menu
         </button>
       </div>
     </div>
